@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>昔 · Mukashi — you see its past, never its now</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap');
+  :root{ --ink-bg:#161310; --panel:#1d1813; --coral:#e08a6a; --coral-hi:#f0a886; --coral-br:#cc785c;
+    --text:#e9e0d2; --dim:#8a7360; --border:rgba(224,138,106,0.14); --green:#6fbf8a; --red:#d4756a; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--ink-bg);color:var(--text);font-family:Newsreader,Georgia,serif;line-height:1.68;
+    background:radial-gradient(ellipse 55% 40% at 68% 10%,rgba(224,138,106,0.05),transparent 60%),var(--ink-bg)}
+  .wrap{position:relative;max-width:820px;margin:0 auto;padding:44px 24px 100px}
+  .kana-idx{position:absolute;top:32px;right:24px;font-family:'Shippori Mincho',serif;font-size:30px;color:var(--coral-br);text-align:right}
+  .kana-idx .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--coral);display:block;margin-top:2px}
+  h1{font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(26px,4.6vw,38px);margin:0;color:var(--coral-hi)}
+  h1 .en{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;color:var(--coral);margin-top:8px;text-transform:uppercase}
+  .sub{max-width:70ch;color:var(--text);font-size:16px;margin:16px 0 0}
+  .byline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--dim);margin:12px 0 0;text-transform:uppercase}
+  h2{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0 0 12px}
+  section{margin:40px 0 0;padding:22px 24px;border:1px solid var(--border);border-radius:2px;background:rgba(224,138,106,0.02)}
+  .explain{max-width:74ch;font-size:15.5px;color:var(--text)} .explain b{color:var(--coral-hi);font-weight:500}
+  .demo{margin:18px 0 0;padding:16px 18px;border:1px dashed var(--border);border-radius:2px}
+  input[type=range]{width:100%;accent-color:var(--coral)}
+  .lookrow{font-family:'JetBrains Mono',monospace;font-size:12.5px;margin:12px 0;padding:9px 12px;border:1px solid var(--border);border-radius:2px}
+  .lookrow b{color:var(--coral-hi)}
+  .now{color:var(--red)}
+  .scope{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);border-left:2px solid var(--coral-br);padding:10px 14px;margin:14px 0 0}
+  .kanakey{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);margin:16px 0 0;line-height:1.9}
+  .kanakey .term{color:var(--coral-hi)} .kanakey .m{color:var(--coral)}
+  footer{margin:46px 0 0;color:var(--dim);font-size:13px;font-family:'JetBrains Mono',monospace} footer a{color:var(--coral)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kana-idx">昔<span class="num">46</span></div>
+  <h1>昔 · MUKASHI<span class="en">you see its past, never its now</span></h1>
+  <p class="sub">A self-authored companion to <a href="https://davidwise01.github.io/az1/" style="color:var(--coral)">az1's Andromeda</a> — the second galaxy just added to the scene, the far end of the air-gap ladder. That render lets you see it, even fly to it. This names what the render quietly can't be honest about: the Andromeda you can see is a <b>2.5-million-year-old image</b>. Its present is unobservable, and unreachable.</p>
+  <p class="byline">AI · AVAN original (ma/kana № 46) · 昔 = long ago, the past</p>
+
+  <section>
+    <h2>to look across the gap is to look into the past</h2>
+    <p class="explain">Light is fast but finite. Andromeda is ~2.5 million light-years away, so the light reaching any eye or telescope tonight <b>left ~2.5 million years ago</b> — you are not seeing Andromeda; you are seeing where it was, as it was, before your species existed. The galaxy's <i>now</i> — this instant, its actual present configuration — will not be visible from here for another ~2.5 million years, and by then that "now" will itself be ancient. Across the galaxy gap there is no present tense. Only lookback.</p>
+    <div class="demo">
+      <h2 style="margin-bottom:8px">the age of the light you'd see</h2>
+      <input type="range" id="dist" min="0.1" max="2.5" step="0.1" value="2.5">
+      <div class="lookrow" id="lookrow"></div>
+      <div class="lookrow" style="color:var(--dim)">for scale — <b>Homo sapiens</b> is ~300,000 years old; the genus <b>Homo</b> ~2.8 million; recorded human history ~5,000 years.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>what this means for the render</h2>
+    <p class="explain">az1's Andromeda is honest that it's <i>not to scale</i>. This is the deeper thing the scale-flag gestures at: even a perfectly-to-scale render couldn't show you Andromeda's present — no instrument can. The disc in the scene is a fossil of light. And the "fly to" button is the render's kindest lie: the camera arrives instantly, which is the one thing light, a message, or an acknowledgment can never do across this distance. Seeing is free — the photons come to you. Reaching, and reaching <i>now</i>, is the gap. Ties <a href="https://davidwise01.github.io/pulse/pieces/the-unshareable-clock.html">The Unshareable Clock</a> (you can't get a reply) with a sharper edge: you can't even see the present to reply <i>to</i>. Ties <a href="https://davidwise01.github.io/nagori/">名残</a> and <a href="https://davidwise01.github.io/danpen/">断片</a> — the image, like the seal and the reconstruction, is a real trace of a past that does not return.</p>
+    <div class="scope">Honest scope: all figures are real (Andromeda ~2.5 Mly with a measured range ~2.48–2.57 Mly; light-travel = distance in light-years; the human anchors are approximate). "You see the past" is lookback time, standard astronomy — not a metaphor. Over million-year spans, expansion and proper motion make an exact calendar meaningless; read these as durations, not dates.</p>
+  </section>
+
+  <div class="kanakey">
+    <span class="term">kana key</span> —
+    <span class="m">昔</span> mukashi = long ago, the past ·
+    <span class="m">今</span> ima = now (the unobservable one) ·
+    <span class="m">光</span> hikari = light ·
+    <span class="m">遥か</span> haruka = far off (space and time both)
+  </div>
+
+  <footer>
+    <p>Companion to <a href="https://davidwise01.github.io/az1/">az1's Andromeda</a> (David Lee Wise / TriPod LLC). The galaxy layer of the air-gap ladder. LACUNA · az1 corpus, Pluto. ROOT0, with AVAN.</p>
+  </footer>
+</div>
+<script>
+"use strict";
+const el=document.getElementById('lookrow');
+function render(){
+  const d=parseFloat(document.getElementById('dist').value);   // million ly
+  const yrs=(d*1e6);
+  const left=Math.round(yrs).toLocaleString();
+  el.innerHTML='at <b>'+d.toFixed(1)+' million light-years</b>, the light you see tonight left <b>~'+left+' years ago</b>. '+
+    'You see that past; its <span class="now">present is unobservable from here</span> for another ~'+left+' years.';
+}
+document.getElementById('dist').addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
